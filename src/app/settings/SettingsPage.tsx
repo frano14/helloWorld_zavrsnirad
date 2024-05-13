@@ -47,9 +47,9 @@ export default function SettingsPage({ user }: SettingsPageProps) {
   }
 
   return (
-    <main className="px-3 py-10">
+    <main className="flex items-center justify-center px-3 py-20">
       <section className="mx-auto max-w-7xl space-y-6">
-        <h1 className="text-3xl font-bold">Settings</h1>
+        <h1 className="text-3xl font-bold">Change your public name</h1>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}

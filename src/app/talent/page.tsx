@@ -19,7 +19,7 @@ export default async function Page() {
   }
 
   return (
-    <main className="mx-auto my-10">
+    <main className="mx-auto my-20">
       <p className="text-center">Talent Dashboard</p>
     </main>
   );
