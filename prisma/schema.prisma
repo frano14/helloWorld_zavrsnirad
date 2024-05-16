@@ -16,16 +16,21 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  role          String?
-  category      String?
-  talent        Boolean    @default(false)
-  accounts      Account[]
-  sessions      Session[]
+  id              String    @id @default(cuid())
+  name            String?     
+  username        String?     
+  email           String    @unique
+  emailVerified   DateTime?
+  image           String?
+  role            String?     
+  worklocation    String?     
+  experience      String?    
+  country         String?   
+  worktime        String?
+  isProfileSeted  Boolean?   @default(false)    
+  talent          Boolean   @default(false)
+  accounts        Account[]
+  sessions        Session[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -74,4 +79,24 @@ model VerificationToken {
 
   @@id([identifier, token])
   @@map("verification_tokens")
+}
+
+model Job {
+  id                Int @id @default(autoincrement())
+  slug              String @unique
+  title             String
+  type              String
+  locationType      String
+  location          String?
+  description       String?
+  salary            Int
+  companyName       String
+  applicationEmail  String?
+  applicationUrl    String?
+  companyLogoUrl    String?
+  approved          Boolean @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("jobs")
 }

@@ -12,4 +12,28 @@ declare module "next-auth" {
   interface User {
     talent: Boolean | null;
   }
+
+  interface User {
+    isProfileSeted: Boolean | null;
+  }
+
+  interface User {
+    username: String | null;
+  }
+
+  interface User {
+    worklocation: String | null;
+  }
+
+  interface User {
+    experience: String | null;
+  }
+
+  interface User {
+    country: String | null;
+  }
+
+  interface User {
+    worktime: String | null;
+  }
 }

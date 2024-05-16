@@ -15,7 +15,8 @@ export async function updateProfile(values: UpdateProfileValues) {
     throw Error("Unauthorized");
   }
 
-  const { name } = updateProfileSchema.parse(values);
+  const { name, username, worklocation, country, worktime, experience } =
+    updateProfileSchema.parse(values);
 
   await prisma.user.update({
     where: {
@@ -23,6 +24,11 @@ export async function updateProfile(values: UpdateProfileValues) {
     },
     data: {
       name,
+      username,
+      worklocation,
+      country,
+      worktime,
+      experience,
     },
   });
 

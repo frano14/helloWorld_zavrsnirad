@@ -31,13 +31,13 @@ export default function Page() {
   return (
     <>
       <nav className="bottomBorder fixed left-0 top-0 z-[200] w-full items-center justify-center bg-white py-4 text-black">
-        <div className="nv:max-w-[1400px] nv:px-0 m-auto flex w-full items-center justify-between bg-white px-6">
+        <div className="m-auto flex w-full items-center justify-between bg-white px-6 nv:max-w-[1400px] nv:px-0">
           <div className="flex items-end gap-8">
-            <h2 className="customFont text-blue cursor-pointer text-[24px] font-bold">
+            <h2 className="customFont cursor-pointer text-[24px] font-bold text-blue">
               HelloWorld
             </h2>
             {!user ? (
-              <ul className="ss:flex hidden gap-4 pb-[6px] text-[12px]">
+              <ul className="hidden gap-4 pb-[6px] text-[12px] ss:flex">
                 <li
                   className="flex cursor-pointer gap-1"
                   onClick={() => {
@@ -85,7 +85,7 @@ export default function Page() {
             ) : (
               <>
                 {!user.talent ? (
-                  <ul className="ss:flex hidden gap-4 pb-[6px] text-[12px]">
+                  <ul className="hidden gap-4 pb-[6px] text-[12px] ss:flex">
                     <li className="flex cursor-pointer items-center justify-center">
                       <p>Your jobs</p>
                       <Image
@@ -124,7 +124,7 @@ export default function Page() {
                     <li className="cursor-pointer">Post a job</li>
                   </ul>
                 ) : (
-                  <ul className="ss:flex hidden gap-4 pb-[6px] text-[12px]">
+                  <ul className="hidden gap-4 pb-[6px] text-[12px] ss:flex">
                     <li className="flex cursor-pointer items-center justify-center">
                       <p>Your jobs</p>
                       <Image
@@ -172,7 +172,7 @@ export default function Page() {
                 alt="User profile picture"
                 width={40}
                 height={40}
-                className="ss:flex hidden aspect-square rounded-full bg-background object-cover"
+                className="bg-background hidden aspect-square rounded-full object-cover ss:flex"
                 onClick={() => {
                   setFindTalentBlockActive(false);
                   setFindJobBlockActive(false);
@@ -187,13 +187,13 @@ export default function Page() {
                       alt="User profile picture"
                       width={40}
                       height={40}
-                      className="aspect-square rounded-full bg-background object-cover"
+                      className="bg-background aspect-square rounded-full object-cover"
                     />
                     <div>
                       <p className="  text-[18px] font-semibold">
                         {user.name || "User"}
                       </p>
-                      <p className="  text-dark text-[14px]">
+                      <p className="  text-[14px] text-dark">
                         {user.email || null}
                       </p>
                     </div>
@@ -201,7 +201,7 @@ export default function Page() {
                   <div className="lightBorderY my-4 ">
                     <Link
                       href="/settings"
-                      className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                      className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                     >
                       <Image
                         src={settingsPng}
@@ -215,7 +215,7 @@ export default function Page() {
                       <>
                         <Link
                           href="/admin"
-                          className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                          className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                         >
                           <Image
                             src={lockPng}
@@ -230,7 +230,7 @@ export default function Page() {
                   </div>
                   <button
                     onClick={() => signOut({ callbackUrl: "/" })}
-                    className="hover:bg-light flex w-full items-center justify-start gap-6 rounded-lg p-2"
+                    className="flex w-full items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                   >
                     <Image src={exitPng} alt="exit" width={16} height={16} />
                     <p className=" text-[16px]">Log out</p>
@@ -245,13 +245,13 @@ export default function Page() {
                       alt="User profile picture"
                       width={40}
                       height={40}
-                      className="aspect-square rounded-full bg-background object-cover"
+                      className="bg-background aspect-square rounded-full object-cover"
                     />
                     <div>
                       <p className="  text-[18px] font-semibold">
                         {user.name || "User"}
                       </p>
-                      <p className="  text-dark text-[14px]">
+                      <p className="  text-[14px] text-dark">
                         {user.email || null}
                       </p>
                     </div>
@@ -259,7 +259,7 @@ export default function Page() {
                   <div className="lightBorderY my-4 ">
                     <Link
                       href="/settings"
-                      className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                      className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                     >
                       <Image
                         src={settingsPng}
@@ -273,7 +273,7 @@ export default function Page() {
                       <>
                         <Link
                           href="/admin"
-                          className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                          className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                         >
                           <Image
                             src={lockPng}
@@ -288,7 +288,7 @@ export default function Page() {
                   </div>
                   <button
                     onClick={() => signOut({ callbackUrl: "/" })}
-                    className="hover:bg-light flex w-full items-center justify-start gap-6 rounded-lg p-2"
+                    className="flex w-full items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                   >
                     <Image src={exitPng} alt="exit" width={16} height={16} />
                     <p className=" text-[16px]">Log out</p>
@@ -298,7 +298,7 @@ export default function Page() {
             </div>
           )}
           {!user && session.status !== "loading" && (
-            <div className="ss:flex hidden">
+            <div className="hidden ss:flex">
               <SignInButton />
             </div>
           )}
@@ -308,7 +308,7 @@ export default function Page() {
             width={32}
             height={32}
             alt="menu"
-            className="ss:hidden flex"
+            className="flex ss:hidden"
             onClick={() => {
               setFindTalentBlockActive(false);
               setFindJobBlockActive(false);
@@ -322,7 +322,7 @@ export default function Page() {
       <FindJobBlock status={findJobBlockActive} />
       {hamburgerMenuActive ? (
         <div
-          className={`shadowAllSides absolute top-[69px] w-[100vw] bg-white p-2 `}
+          className={`shadowAllSides fixed top-[69px] w-[100vw] bg-white p-2 `}
         >
           <div className="flex items-center  gap-6">
             <Image
@@ -330,20 +330,20 @@ export default function Page() {
               alt="User profile picture"
               width={40}
               height={40}
-              className="aspect-square rounded-full bg-background object-cover"
+              className="bg-background aspect-square rounded-full object-cover"
             />
             <div>
               <p className="  text-[18px] font-semibold">
                 {user?.name || "User"}
               </p>
-              <p className="  text-dark text-[14px]">{user?.email || null}</p>
+              <p className="  text-[14px] text-dark">{user?.email || null}</p>
             </div>
           </div>
           <div className="lightBorderY my-4 ">
             <div className=" w-full items-center justify-center">
               <Link
                 href="/settings"
-                className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
               >
                 <Image
                   src={settingsPng}
@@ -358,7 +358,7 @@ export default function Page() {
               <div className="w-full items-center justify-center">
                 <Link
                   href="/admin"
-                  className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                  className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                 >
                   <Image src={lockPng} alt="lock" width={16} height={16} />
                   <p className=" text-[16px]">Admin</p>
@@ -370,7 +370,7 @@ export default function Page() {
                 <div className="w-full items-center justify-center">
                   <Link
                     href="/settings"
-                    className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                    className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                   >
                     <Image
                       src={usersPng}
@@ -384,7 +384,7 @@ export default function Page() {
                 <div className="w-full items-center justify-center">
                   <Link
                     href="/settings"
-                    className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                    className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                   >
                     <Image
                       src={jobsPng}
@@ -403,7 +403,7 @@ export default function Page() {
                     <div className="w-full items-center justify-center">
                       <Link
                         href="/settings"
-                        className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                       >
                         <Image
                           src={jobsPng}
@@ -417,7 +417,7 @@ export default function Page() {
                     <div className="w-full items-center justify-center">
                       <Link
                         href="/settings"
-                        className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                       >
                         <Image
                           src={jobsPng3}
@@ -434,7 +434,7 @@ export default function Page() {
                     <div className="w-full items-center justify-center">
                       <Link
                         href="/settings"
-                        className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                       >
                         <Image
                           src={jobsPng}
@@ -448,7 +448,7 @@ export default function Page() {
                     <div className="w-full items-center justify-center">
                       <Link
                         href="/settings"
-                        className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                       >
                         <Image
                           src={usersPng}
@@ -462,7 +462,7 @@ export default function Page() {
                     <div className="w-full items-center justify-center">
                       <Link
                         href="/settings"
-                        className="hover:bg-light flex items-center justify-start gap-6 rounded-lg p-2"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
                       >
                         <Image
                           src={penPng}
@@ -483,7 +483,7 @@ export default function Page() {
               <div className="flex w-full items-center justify-center">
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="hover:bg-light mb-2 flex gap-6 rounded-lg p-2"
+                  className="mb-2 flex gap-6 rounded-lg p-2 hover:bg-light"
                 >
                   <Image src={exitPng} alt="exit" width={16} height={16} />
                   <p className=" text-[16px]">Log out</p>
@@ -503,7 +503,7 @@ function SignInButton() {
   return (
     <button
       onClick={() => signIn()}
-      className="bg-blue hover:bg-darkerBlue rounded-full px-6 py-2 text-white"
+      className="rounded-full bg-blue px-6 py-2 text-white hover:bg-darkerBlue"
     >
       Sign in
     </button>

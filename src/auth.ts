@@ -6,10 +6,14 @@ import Google from "next-auth/providers/google";
 import Resend from "next-auth/providers/resend";
 import prisma from "./lib/prisma";
 
+interface theme {
+  background: String;
+}
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   trustHost: true,
   theme: {
-    logo: "/logo.png",
+    logo: "helloWorld",
   },
   adapter: PrismaAdapter(prisma) as Adapter,
   callbacks: {
@@ -18,11 +22,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return session;
     },
   },
-  providers: [
-    Google,
-    GitHub,
-    Resend({
-      from: "no-reply@tutorial.codinginflow.com",
-    }),
-  ],
+  providers: [Google, GitHub],
 });
