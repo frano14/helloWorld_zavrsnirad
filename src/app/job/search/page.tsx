@@ -7,10 +7,6 @@ import JobFilterSidebar from "@/components/jobssearch/JobFilterSidebar";
 import JobResults from "@/components/jobssearch/JobResult";
 import { JobFilterValues } from "@/lib/validation";
 
-export const metadata: Metadata = {
-  title: "Jobs Search",
-};
-
 interface PageProps {
   searchParams: {
     q?: string;
@@ -18,6 +14,28 @@ interface PageProps {
     location?: string;
     remote?: string;
     page?: string;
+  };
+}
+
+function getTitle({ q, type, location, remote }: JobFilterValues) {
+  const titlePrefix = q
+    ? `${q} jobs`
+    : type
+      ? `${type} developer jobs`
+      : remote
+        ? "Remote developer jobs"
+        : "All developer jobs";
+
+  const titleSuffix = location ? ` in ${location}` : "";
+
+  return `${titlePrefix}${titleSuffix}`;
+}
+
+export function generateMetadata({
+  searchParams: { q, type, location, remote },
+}: PageProps): Metadata {
+  return {
+    title: `${getTitle({ q, type, location, remote: remote === "true" })} | helloWorld Jobs`,
   };
 }
 
@@ -37,11 +55,13 @@ export default async function Page({
   if (!user) {
     redirect("/api/auth/signin?callbackUrl=/talent");
   }
-
+  console.log(user);
+  console.log(filterValue);
   return (
     <div className="m-auto mt-[137px] w-full px-0 xs:px-6 sc:max-w-[1200px] sc:px-0">
+      <h1 className=" m-auto">{getTitle(filterValue)}</h1>
       <div className="relative flex flex-col gap-4 md:flex-row">
-        <JobFilterSidebar />
+        <JobFilterSidebar defaultValues={filterValue} />
         <JobResults filterValues={filterValue} />
       </div>
     </div>

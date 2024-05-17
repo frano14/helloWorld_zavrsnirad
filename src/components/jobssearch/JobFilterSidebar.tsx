@@ -52,8 +52,7 @@ export default async function JobFilterSidebar({
               id="q"
               name="q"
               placeholder="Title, company, etc."
-              /*               defaultValue={defaultValues.q}
-               */
+              defaultValue={defaultValues.q || ""}
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -61,8 +60,7 @@ export default async function JobFilterSidebar({
             <Select
               id="type"
               name="type"
-              /*               defaultValue={defaultValues.type || ""}
-               */
+              defaultValue={defaultValues.type || ""}
             >
               <option value="">All types</option>
               {jobTypes.map((type) => (
@@ -77,8 +75,7 @@ export default async function JobFilterSidebar({
             <Select
               id="location"
               name="location"
-              /*               defaultValue={defaultValues.location || ""}
-               */
+              defaultValue={defaultValues.location || ""}
             >
               <option value="">All locations</option>
               {distinctLocations.map((location) => (
@@ -94,8 +91,7 @@ export default async function JobFilterSidebar({
               name="remote"
               type="checkbox"
               className="scale-125 accent-black"
-              /*               defaultChecked={defaultValues.remote}
-               */
+              defaultChecked={defaultValues.remote}
             />
             <Label htmlFor="remote">Remote jobs</Label>
           </div>
