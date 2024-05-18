@@ -80,3 +80,9 @@ export const createJobSchema = z
   .and(locationSchema);
 
 export type CreateJobValues = z.infer<typeof createJobSchema>;
+
+export const updateApplicationSchema = z.object({
+  message: z.string().trim().min(1, "Cannot be empty"),
+});
+
+export type UpdateApplicationValues = z.infer<typeof updateApplicationSchema>;
