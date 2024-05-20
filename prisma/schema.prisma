@@ -113,6 +113,7 @@ model Application {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
   message   String
+  status    String   @default("unspecified")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

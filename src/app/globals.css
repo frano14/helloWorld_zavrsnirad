@@ -121,6 +121,9 @@ body {
 .shadowAllSides {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+.lightShadowAllSides {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 
 .rightImg {
   border-top-right-radius: 8px;

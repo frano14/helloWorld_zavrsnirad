@@ -86,3 +86,11 @@ export const updateApplicationSchema = z.object({
 });
 
 export type UpdateApplicationValues = z.infer<typeof updateApplicationSchema>;
+
+export const updateApplicationStatusSchema = z.object({
+  status: z.string().trim().min(1, "Cannot be empty"),
+});
+
+export type UpdateApplicationStatusValues = z.infer<
+  typeof updateApplicationStatusSchema
+>;

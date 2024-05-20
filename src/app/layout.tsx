@@ -30,8 +30,7 @@ export default function RootLayout({
       </head>
       <body>
         <SessionProvider>
-          {/*           <NavBar />
-           */}{" "}
+          <NavBar />
           {children}
           <Footer />
         </SessionProvider>

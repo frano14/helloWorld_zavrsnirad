@@ -170,9 +170,9 @@ export default function Page() {
               <Image
                 src={user.image || avatarPlaceholder}
                 alt="User profile picture"
-                width={40}
-                height={40}
-                className="bg-background hidden aspect-square rounded-full object-cover ss:flex"
+                width={32}
+                height={32}
+                className="hidden aspect-square rounded-full bg-background object-cover ss:flex"
                 onClick={() => {
                   setFindTalentBlockActive(false);
                   setFindJobBlockActive(false);
@@ -187,7 +187,7 @@ export default function Page() {
                       alt="User profile picture"
                       width={40}
                       height={40}
-                      className="bg-background aspect-square rounded-full object-cover"
+                      className="aspect-square rounded-full bg-background object-cover"
                     />
                     <div>
                       <p className="  text-[18px] font-semibold">
@@ -245,7 +245,7 @@ export default function Page() {
                       alt="User profile picture"
                       width={40}
                       height={40}
-                      className="bg-background aspect-square rounded-full object-cover"
+                      className="aspect-square rounded-full bg-background object-cover"
                     />
                     <div>
                       <p className="  text-[18px] font-semibold">
@@ -321,16 +321,14 @@ export default function Page() {
       <FindTalentBlock status={findTalentBlockActive} />
       <FindJobBlock status={findJobBlockActive} />
       {hamburgerMenuActive ? (
-        <div
-          className={`shadowAllSides fixed top-[69px] w-[100vw] bg-white p-2 `}
-        >
+        <div className={`shadowAllSides fixed top-0 w-[100vw] bg-white p-2 `}>
           <div className="flex items-center  gap-6">
             <Image
               src={user?.image || avatarPlaceholder}
               alt="User profile picture"
               width={40}
               height={40}
-              className="bg-background aspect-square rounded-full object-cover"
+              className="aspect-square rounded-full bg-background object-cover"
             />
             <div>
               <p className="  text-[18px] font-semibold">
