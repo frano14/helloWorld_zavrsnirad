@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { approveApplication, rejectApplication } from "./action";
+import LoadingButton from "@/components/LoadingButton";
+import FormSubmitButton from "@/components/jobssearch/FormSubmitButton";
 
 interface ApplicationFormProps {
   applicationId: number;
@@ -27,10 +29,20 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ applicationId }) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       {error && <p>{error}</p>}
-      <button onClick={handleApprove}>Approve</button>
-      <button onClick={handleReject}>Reject</button>
+      <FormSubmitButton
+        onClick={handleApprove}
+        className="bg-lime-400 px-6 py-2 hover:bg-lime-600"
+      >
+        Accept
+      </FormSubmitButton>
+      <FormSubmitButton
+        onClick={handleReject}
+        className="bg-red-400 px-6 py-2 hover:bg-red-600"
+      >
+        Reject
+      </FormSubmitButton>
     </div>
   );
 };

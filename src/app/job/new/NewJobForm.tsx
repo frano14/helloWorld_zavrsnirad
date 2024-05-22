@@ -62,7 +62,7 @@ export default function NewJobForm() {
   }
 
   return (
-    <main className="m-auto my-10 max-w-3xl space-y-10">
+    <main className="m-auto my-[128px] max-w-3xl space-y-10">
       <div className="space-y-5 text-center">
         <h1>Find your perfect developer</h1>
         <p className="text-muted-foreground">
@@ -106,6 +106,7 @@ export default function NewJobForm() {
                       <option value="" hidden>
                         Select an option
                       </option>
+                      +{" "}
                       {jobTypes.map((jobType) => (
                         <option key={jobType} value={jobType}>
                           {jobType}

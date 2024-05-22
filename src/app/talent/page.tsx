@@ -32,7 +32,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="m-auto mb-16 w-full px-6 pt-[137px] xs:px-16 sc:max-w-[1200px] sc:px-0">
+      <div className="m-auto w-full px-6 pt-[128px] xs:px-16 sc:max-w-[1200px] sc:px-0">
         <div className="flex w-full items-center justify-between rounded-lg bg-green p-12 text-white">
           <div className="flex max-w-[70%] flex-col items-start justify-start">
             <p className=" customFont mb-12 text-[28px] font-semibold">

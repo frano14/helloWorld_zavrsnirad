@@ -44,7 +44,7 @@ const SettingsPage: React.FC<{ user: any }> = ({ user }) => {
   };
 
   return (
-    <div className="mt-[137px] flex  flex-col items-center justify-center">
+    <div className="mt-[128px] flex  flex-col items-center justify-center">
       <h1 className="customFont text-[26px] xs:text-[32px] md:text-[38px]">
         Hello {user.name} 👋
       </h1>

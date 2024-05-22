@@ -9,6 +9,8 @@ import {
   UpdateApplicationValues,
   updateApplicationSchema,
 } from "@/lib/validation";
+import RichTextEditor from "@/components/jobcreate/RichTextEditor";
+import LoadingButton from "@/components/LoadingButton";
 
 export default function JobApplicationForm({ jobId }: { jobId: number }) {
   const { data: session } = useSession();
@@ -17,6 +19,7 @@ export default function JobApplicationForm({ jobId }: { jobId: number }) {
     register,
     handleSubmit,
     formState: { errors },
+    formState: { isSubmitting },
   } = useForm<UpdateApplicationValues>({
     resolver: zodResolver(updateApplicationSchema),
   });
@@ -34,18 +37,26 @@ export default function JobApplicationForm({ jobId }: { jobId: number }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="message">Message</label>
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+      <div className="w-full  py-6">
         <textarea
           id="message"
           {...register("message")}
           required
-          className="bg-green"
+          className="w-full bg-light p-4"
+          placeholder="The more detailed, the better"
+          rows={12}
         />
         {errors.message && <p>{errors.message.message}</p>}
       </div>
-      <button type="submit">Apply</button>
+      {errors.message && <p>{errors.message.message}</p>}
+      <LoadingButton
+        type="submit"
+        loading={isSubmitting}
+        className="bg-blue hover:bg-darkerBlue"
+      >
+        Submit
+      </LoadingButton>
     </form>
   );
 }

@@ -37,7 +37,7 @@ export default async function Page({ params: { id } }: PageProps) {
   if (!user) notFound();
 
   return (
-    <div className="mx-3 my-10 flex flex-col items-center gap-3">
+    <div className="mx-3 mt-[128px] flex flex-col items-center gap-3">
       {user.image && (
         <Image
           src={user.image}

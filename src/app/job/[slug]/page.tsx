@@ -1,3 +1,4 @@
+import FormSubmitButton from "@/components/jobssearch/FormSubmitButton";
 import JobPage from "@/components/pages/JobPage";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/prisma";
@@ -53,14 +54,12 @@ export default async function Page({ params: { slug } }: PageProps) {
   }
 
   return (
-    <main className="m-auto my-10 flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
+    <main className=" m-auto mt-[128px] flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
       <JobPage job={job} />
       <aside>
-        <Button asChild>
-          <a href={applicationLink} className="w-40 md:w-fit">
-            Apply now
-          </a>
-        </Button>
+        <FormSubmitButton className="w-40 bg-blue text-white md:w-fit">
+          Apply now
+        </FormSubmitButton>
       </aside>
     </main>
   );

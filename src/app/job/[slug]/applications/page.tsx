@@ -20,10 +20,19 @@ export default async function Page({ params: { slug } }: PageProps) {
   });
 
   return (
-    <main className="m-auto my-10 flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
+    <main className="m-auto mt-[128px] px-0 xs:px-6 sc:max-w-[1200px] sc:px-0">
+      <h1 className="customFont mb-8 text-[24px] xs:text-[28px] md:text-[32px]">
+        Applications for your job: {job.title}
+      </h1>
       {applications.map((application) => (
-        <div key={application.id} className="bg-light p-4">
-          <p>{application.message}</p>
+        <div
+          key={application.id}
+          className="lightBorder mb-4 flex items-start justify-between gap-24 rounded-lg bg-white p-4"
+        >
+          <div>
+            <p className="text-[22px] font-semibold">{job.title}</p>
+            <p className="text-[16px]">{application.message}</p>
+          </div>
           <ApplicationForm applicationId={application.id} />
         </div>
       ))}
