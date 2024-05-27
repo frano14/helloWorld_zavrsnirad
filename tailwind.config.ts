@@ -49,6 +49,7 @@ const config = {
         ultraLight: "#F2F2F2",
         dark: "#777B7E",
         overlay: "rgba(255, 255, 255, 0.4)",
+        medium: "#2936782",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

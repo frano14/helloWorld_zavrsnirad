@@ -13,12 +13,12 @@ const FindTalentBlock: React.FC<Props> = ({ status }) => {
   return (
     <>
       {status ? (
-        <div className="relative m-auto w-full px-[22px] text-black nv:max-w-[1400px] nv:px-0">
-          <div className="bottomBorder fixed top-[69px] z-10 m-auto flex w-full gap-8 bg-white py-4 nv:max-w-[1400px]">
+        <div className="relative z-[999] m-auto w-full px-[22px] nv:max-w-[1400px] nv:px-0">
+          <div className="bottomBorder whiteBg fixed top-[73px] z-10 m-auto flex w-full gap-8 py-4 nv:max-w-[1400px]">
             {/* Left side */}
             <div className="borderRight flex w-[60%] flex-col gap-4 pr-4">
               <div className="flex flex-col gap-3 p-6 hover:bg-light">
-                <p className="text-[16px] font-medium">
+                <p className="whitecolor text-[16px] font-medium">
                   Post a job and hire one of many talents
                 </p>
                 <p className="cursor-pointer text-[14px] text-blue">
@@ -26,7 +26,7 @@ const FindTalentBlock: React.FC<Props> = ({ status }) => {
                 </p>
               </div>
               <div className="flex  flex-col gap-3 p-6 hover:bg-light">
-                <p className="text-[16px] font-medium">
+                <p className="whitecolor text-[16px] font-medium">
                   Take a look at the talents we recommend
                 </p>
                 <p className="cursor-pointer text-[14px] text-blue">

@@ -16,6 +16,7 @@ import penPng from "../assets/images/pen.png";
 import { useState } from "react";
 import FindTalentBlock from "./navbar/FindTalentBlock";
 import FindJobBlock from "./navbar/FindJobBlock";
+import ThemeToggle from "@/app/ThemeToggle";
 
 export default function Page() {
   const session = useSession();
@@ -30,9 +31,11 @@ export default function Page() {
 
   return (
     <>
-      <nav className="bottomBorder fixed left-0 top-0 z-[200] w-full items-center justify-center bg-white py-4 text-black">
-        <div className="m-auto flex w-full items-center justify-between bg-white px-6 nv:max-w-[1400px] nv:px-0">
+      <nav className="bottomBorder whiteBg fixed left-0 top-0 z-[200] w-full items-center justify-center py-4">
+        <div className="whiteBg m-auto flex w-full items-center justify-between px-6 nv:max-w-[1400px] nv:px-0">
           <div className="flex items-end gap-8">
+            {/*             <ThemeToggle />
+             */}{" "}
             <h2 className="customFont cursor-pointer text-[24px] font-bold text-blue">
               HelloWorld
             </h2>
@@ -41,8 +44,8 @@ export default function Page() {
                 <li
                   className="flex cursor-pointer gap-1"
                   onClick={() => {
-                    setFindTalentBlockActive(false);
-                    setFindJobBlockActive(!findJobBlockActive);
+                    setFindTalentBlockActive(!findTalentBlockActive);
+                    setFindJobBlockActive(false);
                     setUserBlockActive(false);
                   }}
                 >
@@ -60,8 +63,8 @@ export default function Page() {
                 <li
                   className="flex cursor-pointer gap-1"
                   onClick={() => {
-                    setFindTalentBlockActive(!findTalentBlockActive);
-                    setFindJobBlockActive(false);
+                    setFindTalentBlockActive(false);
+                    setFindJobBlockActive(!findJobBlockActive);
                     setUserBlockActive(false);
                   }}
                 >
@@ -180,7 +183,7 @@ export default function Page() {
                 }}
               />
               {userBlockActive && (
-                <div className=" shadowAllSides absolute right-0 top-[57px] w-[300px] rounded-lg bg-white p-2">
+                <div className=" shadowAllSides whiteBg absolute right-0 top-[57px] w-[300px] rounded-lg p-2">
                   <div className="flex items-center  gap-6">
                     <Image
                       src={user.image || avatarPlaceholder}
@@ -298,7 +301,8 @@ export default function Page() {
             </div>
           )}
           {!user && session.status !== "loading" && (
-            <div className="hidden ss:flex">
+            <div className="hidden items-center justify-center gap-4 ss:flex">
+              <ThemeToggle />
               <SignInButton />
             </div>
           )}

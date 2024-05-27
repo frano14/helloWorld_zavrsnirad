@@ -13,8 +13,8 @@ const FindWorkBlock: FC<FindWorkBlockProps> = ({ status }) => {
   return (
     <>
       {status ? (
-        <div className="relative z-[999] m-auto w-full px-[22px] text-black nv:max-w-[1400px] nv:px-0">
-          <div className="bottomBorder fixed top-[69px] z-10 w-full bg-white py-8 nv:max-w-[1400px]">
+        <div className="relative z-[999] m-auto w-full px-[22px] nv:max-w-[1400px] nv:px-0">
+          <div className="bottomBorder whiteBg fixed top-[73px] z-10 w-full py-8 nv:max-w-[1400px]">
             <h3 className="customFont ml-4 text-[20px] font-semibold">
               Find a work for your skill
             </h3>

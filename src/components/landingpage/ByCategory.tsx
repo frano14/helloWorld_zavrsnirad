@@ -9,8 +9,8 @@ const ByCategory: React.FC = () => {
   const [talents, setTalents] = useState<boolean>(true);
 
   return (
-    <section id="ByCategory" className="bg-light">
-      <div className="m-auto w-full bg-light px-6 py-16 sc:max-w-[1200px] sc:px-0">
+    <section id="ByCategory" className="grayBg">
+      <div className="grayBg m-auto w-full px-6 py-16 sc:max-w-[1200px] sc:px-0">
         <h1 className="customFont text-[34px] leading-[36px] xs:text-[46px] xs:leading-[54px] md:text-[52px]">
           Search for talents or jobs by category
         </h1>
@@ -32,7 +32,7 @@ const ByCategory: React.FC = () => {
         </p>
         <div className="grid grid-cols-1 gap-x-6 gap-y-3 xs:grid-cols-2 ss:grid-cols-3 sm:grid-cols-4">
           {popularTags.map((tag: PopularTag) => (
-            <div className="rounded-lg bg-white p-4" key={tag.title}>
+            <div className="whiteBg rounded-lg p-4" key={tag.title}>
               <h3 className="mb-4 text-[18px] font-semibold">{tag.title}</h3>
               <div className="flex items-start justify-start gap-16 pb-6">
                 <div className="flex items-center justify-center gap-1">
