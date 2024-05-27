@@ -5,6 +5,7 @@ import prisma from "@/lib/prisma";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
+import Link from "next/link";
 
 interface PageProps {
   params: { slug: string };
@@ -57,8 +58,8 @@ export default async function Page({ params: { slug } }: PageProps) {
     <main className=" m-auto mt-[128px] flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
       <JobPage job={job} />
       <aside>
-        <FormSubmitButton className="w-40 bg-blue text-white md:w-fit">
-          Apply now
+        <FormSubmitButton className="hover: w-40 bg-blue text-white hover:bg-darkerBlue md:w-fit">
+          <Link href={`/job/application/${slug}`}>Apply now</Link>
         </FormSubmitButton>
       </aside>
     </main>

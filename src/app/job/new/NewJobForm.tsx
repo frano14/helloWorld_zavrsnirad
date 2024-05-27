@@ -64,9 +64,9 @@ export default function NewJobForm() {
   return (
     <main className="m-auto my-[128px] max-w-3xl space-y-10">
       <div className="space-y-5 text-center">
-        <h1>Find your perfect developer</h1>
+        <h1 className="customFont text-[24px]">Find your perfect developer</h1>
         <p className="text-muted-foreground">
-          Get your job posting seen by thousands of job seekers.
+          Get your job posting seen by thousands of talents.
         </p>
       </div>
       <div className="space-y-6 rounded-lg border p-4">
@@ -290,7 +290,11 @@ export default function NewJobForm() {
                 </FormItem>
               )}
             />
-            <LoadingButton type="submit" loading={isSubmitting}>
+            <LoadingButton
+              type="submit"
+              loading={isSubmitting}
+              className="bg-blue hover:bg-darkerBlue"
+            >
               Submit
             </LoadingButton>
           </form>

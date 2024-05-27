@@ -9,7 +9,6 @@ import {
   UpdateApplicationValues,
   updateApplicationSchema,
 } from "@/lib/validation";
-import RichTextEditor from "@/components/jobcreate/RichTextEditor";
 import LoadingButton from "@/components/LoadingButton";
 
 export default function JobApplicationForm({ jobId }: { jobId: number }) {
@@ -43,7 +42,7 @@ export default function JobApplicationForm({ jobId }: { jobId: number }) {
           id="message"
           {...register("message")}
           required
-          className="w-full bg-light p-4"
+          className="w-full rounded-lg bg-light p-4"
           placeholder="The more detailed, the better"
           rows={12}
         />

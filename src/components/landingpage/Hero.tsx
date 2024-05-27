@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import HeroImg from "../../assets/images/HeroImg.jpg";
+import { signIn } from "next-auth/react";
 
 const Hero: React.FC = () => {
   return (
@@ -16,7 +19,10 @@ const Hero: React.FC = () => {
         <p className="pb-4 pt-2 text-[16px] font-light ss:pb-8 ss:pt-4 md:pb-16 md:text-[18px]">
           post a job today and start working tomorrow
         </p>
-        <button className="rounded-full bg-white px-6 py-2 text-blue ">
+        <button
+          className="rounded-full bg-white px-8 py-3 text-blue hover:bg-[#DDDDDD]"
+          onClick={() => signIn()}
+        >
           Start now
         </button>
       </div>

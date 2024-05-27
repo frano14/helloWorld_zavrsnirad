@@ -75,9 +75,20 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato";
   cursor: default;
+}
+
+.greenBorder {
+  border: 1px solid #65a30d;
+}
+.redBorder {
+  border: 1px solid #dc2626;
 }
 
 .customFont {

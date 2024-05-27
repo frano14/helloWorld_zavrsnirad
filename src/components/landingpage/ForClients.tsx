@@ -7,6 +7,7 @@ import contract from "../../assets/images/contract.png";
 import headphones from "../../assets/images/headphones.png";
 import ForClientImg1 from "../../assets/images/ForClientImg1.jpeg";
 import ForClientImg2 from "../../assets/images/ForClientImg2.jpeg";
+import { signIn } from "next-auth/react";
 
 const getWindowWidth = (): number => {
   return window.innerWidth;
@@ -70,7 +71,10 @@ const ForClients: React.FC = () => {
             </p>
           </li>
         </ul>
-        <button className="mt-6 w-auto rounded-full bg-white px-8 py-3 text-green">
+        <button
+          className="mt-6 w-auto rounded-full bg-white px-8 py-3 text-green hover:bg-[#DDDDDD]"
+          onClick={() => signIn()}
+        >
           Learn more
         </button>
       </div>

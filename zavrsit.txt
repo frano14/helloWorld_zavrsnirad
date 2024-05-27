@@ -1,0 +1,22 @@
+Poštovani,
+
+Želim izraziti interes za poziciju iskusnog React developera za rad na vašem postojećem projektu.
+
+Imam iskustva u razvoju kompleksnih aplikacija koristeći React, uključujući iskustvo u radu s Next.js-om, što obuhvaća server-side rendering i statičku optimizaciju. Također, iskusno koristim Redux za upravljanje stanjem aplikacija, kao i Context API za manje složene slučajeve
+
+Imam iskustva u integraciji i radu s RESTful API-jima za komunikaciju između frontend-a i backend-a. Na nekoliko projekata surađivao sam s backend developerima, gdje sam bio zadužen za razvoj frontend dijela aplikacija
+
+Imam dva projekta u kojima sam samostalno radio backend. Jedan projekt u Next.js-u, gdje sam koristio ugrađeni API ruter, i drugi projekt u Node.js-u, gdje sam razvijao kompletan backend koristeći Express
+
+Here are some of my frontend projects:
+https://nikestrengthfrano.netlify.app/
+https://fishhousefrano.netlify.app/
+
+You can also check out my other projects that are not hosted online on my GitHub profile. Among them are projects that use backend technologies.
+https://github.com/frano14
+
+Smatram da bi ovo mogla biti sjajna prilika za obje strane, te se radujem potencijalnoj dugoročnoj suradnji
+
+Hvala vam na razmatranju mog prijedloga. Rado ću pružiti dodatne informacije ili sudjelovati u razgovoru za posao kako bih detaljnije predstavio svoje kvalifikacije i iskustvo
+
+S poštovanjem,

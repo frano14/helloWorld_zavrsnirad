@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import ForTalentImg from "../../assets/images/ForTalentImg.jpg";
+import { signIn } from "next-auth/react";
 
 const ForTalents: React.FC = () => {
   return (
@@ -29,7 +32,10 @@ const ForTalents: React.FC = () => {
             <p>Control when, where and how you work</p>
             <p>Explore different ways to earn</p>
           </div>
-          <button className="rounded-full bg-white px-6 py-2 text-blue ">
+          <button
+            className="rounded-full bg-white px-8 py-3 text-blue hover:bg-[#DDDDDD]"
+            onClick={() => signIn()}
+          >
             Learn more
           </button>{" "}
         </div>

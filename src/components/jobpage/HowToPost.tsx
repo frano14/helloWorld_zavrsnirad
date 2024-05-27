@@ -8,6 +8,7 @@ import two from "../../assets/images/two.png";
 import three from "../../assets/images/three.png";
 import four from "../../assets/images/four.png";
 import search from "../../assets/images/search.png";
+import Link from "next/link";
 
 const HowToPost: React.FC = () => {
   return (
@@ -99,7 +100,7 @@ const HowToPost: React.FC = () => {
         </div>
         <div className="mt-16 flex items-center justify-center">
           <button className="cursor-pointer rounded-full bg-blue px-8 py-3 font-semibold text-white">
-            Post now
+            <Link href="/job/new">Post a job</Link>
           </button>
         </div>
       </div>

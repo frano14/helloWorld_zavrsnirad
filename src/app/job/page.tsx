@@ -44,7 +44,7 @@ export default async function Page() {
             set up a job now
           </p>
           <button className="rounded-full bg-white px-6 py-2 font-bold text-black">
-            <Link href="/howtopost">See How</Link>
+            <Link href="#howtopost">See How</Link>
           </button>
         </div>
         <div>
@@ -57,7 +57,7 @@ export default async function Page() {
             Your jobs
           </h1>
           <button className="mb-8 hidden rounded-full bg-blue px-8 py-3 text-white hover:bg-darkerBlue sm:flex">
-            Post a job
+            <Link href="/job/new">Post a job</Link>
           </button>
         </div>
         <div className="grid grid-cols-4 gap-8">
