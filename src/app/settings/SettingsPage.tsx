@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { updateProfile } from "./actions";
 import { UpdateProfileValues } from "@/lib/validation";
-import { redirect } from "next/navigation";
 
 const SettingsPage: React.FC<{ user: any }> = ({ user }) => {
   const [formData, setFormData] = useState<UpdateProfileValues>({
@@ -13,6 +12,7 @@ const SettingsPage: React.FC<{ user: any }> = ({ user }) => {
     country: user.country,
     worktime: user.worktime,
     experience: user.experience,
+    isTalent: user.isTalent,
   });
 
   const [isProfileSeted, setIsProfileSeted] = useState<boolean>(
@@ -20,10 +20,18 @@ const SettingsPage: React.FC<{ user: any }> = ({ user }) => {
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const inputValue = type === "checkbox" ? checked : value;
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: inputValue,
+    }));
+  };
+
+  const handleTalentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      isTalent: !e.target.checked, // If checkbox is checked, set isTalent to false
     }));
   };
 
@@ -79,6 +87,7 @@ const SettingsPage: React.FC<{ user: any }> = ({ user }) => {
             onChange={handleChange}
           />
         </div>
+
         <div>
           <label>Work Location:</label>
           <div className="flex flex-col gap-2">
@@ -115,6 +124,7 @@ const SettingsPage: React.FC<{ user: any }> = ({ user }) => {
             </div>
           </div>
         </div>
+
         <div className="flex flex-col">
           <label>Country:</label>
           <input
@@ -192,13 +202,30 @@ const SettingsPage: React.FC<{ user: any }> = ({ user }) => {
               <input
                 type="radio"
                 name="worktime"
-                value="Intership"
-                checked={formData.worktime === "Intership"}
+                value="Internship"
+                checked={formData.worktime === "Internship"}
                 onChange={handleChange}
               />
-              <label>Intership</label>
+              <label>Internship</label>
             </div>
           </div>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-2">Are you</label>
+
+          <div className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              name="isEmployer"
+              checked={!formData.isTalent}
+              onChange={handleTalentChange}
+            />
+            <label>Employer</label>
+          </div>
+          <label className="text-[14px] text-dark">
+            {`If you don't select "Employer", we'll assume you're a "Talent".`}
+          </label>
         </div>
 
         <button

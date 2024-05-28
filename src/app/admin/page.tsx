@@ -1,5 +1,6 @@
 import JobListItem from "@/components/jobssearch/JobListItem";
 import prisma from "@/lib/prisma";
+import getSession from "@/lib/getSession";
 import Link from "next/link";
 
 export default async function AdminPage() {
@@ -7,9 +8,14 @@ export default async function AdminPage() {
     where: { approved: false },
   });
 
+  const session = await getSession();
+  const user = session?.user;
+
   return (
-    <main className="m-auto my-10 max-w-5xl space-y-10 px-3">
-      <h1 className="text-center">Admin Dashboard</h1>
+    <main className="m-auto mt-[128px] w-full px-0 xs:px-6 sc:max-w-[1200px] sc:px-0">
+      <h1 className="customFont mb-12 text-center text-[24px] font-semibold">
+        {user?.name}, welcome back to the admin dashboard!
+      </h1>
       <section className="flex flex-col gap-3">
         <h2 className="text-lg font-bold">Unapproved jobs:</h2>
         {unapprovedJobs.map((job) => (
@@ -18,7 +24,9 @@ export default async function AdminPage() {
           </Link>
         ))}
         {unapprovedJobs.length === 0 && (
-          <p className="text-muted-foreground">No unapproved jobs</p>
+          <p className="text-muted-foreground">
+            You currently do not have any unapproved jobs
+          </p>
         )}
       </section>
     </main>

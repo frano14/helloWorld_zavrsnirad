@@ -26,21 +26,21 @@ export default async function Page() {
     redirect("/api/auth/signin?callbackUrl=/talent");
   }
 
-  if (!user.talent) {
+  if (!user.isTalent) {
     redirect("/job");
   }
 
   return (
     <>
       <div className="m-auto w-full px-6 pt-[128px] xs:px-16 sc:max-w-[1200px] sc:px-0">
-        <div className="flex w-full items-center justify-between rounded-lg bg-green p-12 text-white">
+        <div className="mb-16 flex w-full items-center justify-between rounded-lg bg-green p-12 text-white">
           <div className="flex max-w-[70%] flex-col items-start justify-start">
             <p className=" customFont mb-12 text-[28px] font-semibold">
               Explore the helloWorld job market, and make sure that we are the
               right choice for you
             </p>
             <button className="rounded-full bg-white px-6 py-2 font-bold text-green">
-              <Link href="/howtopost">See now</Link>
+              <Link href="/job/search">See now</Link>
             </button>
           </div>
           <div>
@@ -48,8 +48,8 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      <section id="ByCategory" className="bg-light">
-        <div className="m-auto flex w-full flex-col items-center justify-center bg-light px-6 py-16 sc:max-w-[1200px] sc:px-0">
+      <section id="ByCategory" className="grayBg">
+        <div className="grayBg m-auto flex w-full flex-col items-center justify-center px-6 py-16 sc:max-w-[1200px] sc:px-0">
           <h1 className="customFont mb-6 text-[26px] xs:text-[32px] md:text-[38px]">
             Advantages of helloWorld
           </h1>

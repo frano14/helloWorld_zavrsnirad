@@ -27,8 +27,8 @@ model User {
   experience      String?    
   country         String?   
   worktime        String?
+  isTalent        Boolean    @default(true)
   isProfileSeted  Boolean?   @default(false)    
-  talent          Boolean   @default(false)
   accounts        Account[]
   sessions        Session[]
   createdAt       DateTime  @default(now())

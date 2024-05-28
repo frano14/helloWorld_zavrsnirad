@@ -8,7 +8,8 @@
 
     --whitebackground: 0 0% 100%;
     --graybackground: 0 0% 93.7%;
-    --whitetext: 0 0% 100%;
+
+    --blacktext: 0 0% 0%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -44,31 +45,32 @@
 
     --whitebackground: 0 0% 0%;
     --graybackground: 0 0% 0%;
-    --whitetext: 0 0% 0%;
+
+    --blacktext: 0 0% 0%;
 
     --card: 0 0% 0%;
     --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
     --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 0%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 0%;
-    --muted-foreground: 0 0% 100%;
+    --muted-foreground: 0 0% 0%;
 
     --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 0% 100%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 0%;
 
     --border: 0 0% 100%;
-    --input: 0 0% 100%;
+    --input: 0 0% 0%;
     --ring: 0 0% 100%;
     background-color: #000000;
   }
@@ -155,8 +157,8 @@ body {
 .grayBg {
   background-color: hsl(var(--graybackground));
 }
-.whitecolor {
-  color: hsl(var(--whitetext));
+.blackTxt {
+  color: hsl(var(--blacktext));
 }
 
 @media (max-width: 869px) and (min-width: 480px) {

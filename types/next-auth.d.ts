@@ -36,4 +36,8 @@ declare module "next-auth" {
   interface User {
     worktime: String | null;
   }
+
+  interface User {
+    isTalent: String | null;
+  }
 }

@@ -11,6 +11,7 @@ export const updateProfileSchema = z.object({
   country: z.string().trim().min(1, "Cannot be empty"),
   worktime: z.string().trim().min(1, "Cannot be empty"),
   experience: z.string().trim().min(1, "Cannot be empty"),
+  isTalent: z.coerce.boolean(),
 });
 
 export type UpdateProfileValues = z.infer<typeof updateProfileSchema>;

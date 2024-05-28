@@ -16,7 +16,7 @@ export default async function LandingPage() {
   const user = session?.user;
 
   if (user) {
-    if (user.talent) {
+    if (user.isTalent) {
       redirect("/talent");
     } else {
       redirect("/job");

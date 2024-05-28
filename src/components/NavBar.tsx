@@ -34,11 +34,11 @@ export default function Page() {
       <nav className="bottomBorder whiteBg fixed left-0 top-0 z-[200] w-full items-center justify-center py-4">
         <div className="whiteBg m-auto flex w-full items-center justify-between px-6 nv:max-w-[1400px] nv:px-0">
           <div className="flex items-end gap-8">
-            {/*             <ThemeToggle />
-             */}{" "}
-            <h2 className="customFont cursor-pointer text-[24px] font-bold text-blue">
-              HelloWorld
-            </h2>
+            <Link href={"/"}>
+              <h2 className="customFont cursor-pointer text-[24px] font-bold text-blue">
+                HelloWorld
+              </h2>
+            </Link>
             {!user ? (
               <ul className="hidden gap-4 pb-[6px] text-[12px] ss:flex">
                 <li
@@ -80,29 +80,15 @@ export default function Page() {
                   />
                 </li>
                 <li className="cursor-pointer">
-                  <Link href="/" passHref>
+                  <Link href="#whyhelloworld" passHref>
                     <p>Why Helloworld</p>
                   </Link>
                 </li>
               </ul>
             ) : (
               <>
-                {!user.talent ? (
+                {!user.isTalent ? (
                   <ul className="hidden gap-4 pb-[6px] text-[12px] ss:flex">
-                    <li className="flex cursor-pointer items-center justify-center">
-                      <p>Your jobs</p>
-                      <Image
-                        src={arrowDown}
-                        width={16}
-                        height={16}
-                        alt="arrow down"
-                        className={
-                          findJobBlockActive
-                            ? `rotate-180 transform`
-                            : undefined
-                        }
-                      />
-                    </li>
                     <li
                       className="flex cursor-pointer items-center justify-center"
                       onClick={() => {
@@ -124,24 +110,17 @@ export default function Page() {
                         }
                       />
                     </li>
-                    <li className="cursor-pointer">Post a job</li>
+                    <Link href={"/job#myjobs"}>
+                      <li className="flex cursor-pointer items-center justify-center">
+                        <p>Your jobs</p>
+                      </li>
+                    </Link>
+                    <Link href={"/job/new"}>
+                      <li className="cursor-pointer">Post a job</li>
+                    </Link>
                   </ul>
                 ) : (
                   <ul className="hidden gap-4 pb-[6px] text-[12px] ss:flex">
-                    <li className="flex cursor-pointer items-center justify-center">
-                      <p>Your jobs</p>
-                      <Image
-                        src={arrowDown}
-                        width={16}
-                        height={16}
-                        alt="arrow down"
-                        className={
-                          findJobBlockActive
-                            ? `rotate-180 transform`
-                            : undefined
-                        }
-                      />
-                    </li>
                     <li
                       className="flex cursor-pointer items-center justify-center"
                       onClick={() => {
@@ -173,8 +152,8 @@ export default function Page() {
               <Image
                 src={user.image || avatarPlaceholder}
                 alt="User profile picture"
-                width={32}
-                height={32}
+                width={40}
+                height={40}
                 className="hidden aspect-square rounded-full bg-background object-cover ss:flex"
                 onClick={() => {
                   setFindTalentBlockActive(false);
@@ -183,7 +162,7 @@ export default function Page() {
                 }}
               />
               {userBlockActive && (
-                <div className=" shadowAllSides whiteBg absolute right-0 top-[57px] w-[300px] rounded-lg p-2">
+                <div className=" shadowAllSides whiteBg absolute right-0 top-[56px] w-[300px] rounded-lg p-2">
                   <div className="flex items-center  gap-6">
                     <Image
                       src={user.image || avatarPlaceholder}
@@ -204,7 +183,7 @@ export default function Page() {
                   <div className="lightBorderY my-4 ">
                     <Link
                       href="/settings"
-                      className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                      className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                     >
                       <Image
                         src={settingsPng}
@@ -218,7 +197,7 @@ export default function Page() {
                       <>
                         <Link
                           href="/admin"
-                          className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                          className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                         >
                           <Image
                             src={lockPng}
@@ -233,7 +212,7 @@ export default function Page() {
                   </div>
                   <button
                     onClick={() => signOut({ callbackUrl: "/" })}
-                    className="flex w-full items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                    className="flex w-full items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                   >
                     <Image src={exitPng} alt="exit" width={16} height={16} />
                     <p className=" text-[16px]">Log out</p>
@@ -241,7 +220,7 @@ export default function Page() {
                 </div>
               )}
               {userBlockActive && (
-                <div className=" shadowAllSides absolute right-0 top-[57px] w-[300px] rounded-lg bg-white p-2">
+                <div className=" shadowAllSides whiteBg absolute right-0 top-[56px] w-[300px] rounded-lg p-2">
                   <div className="flex items-center  gap-6">
                     <Image
                       src={user.image || avatarPlaceholder}
@@ -262,7 +241,7 @@ export default function Page() {
                   <div className="lightBorderY my-4 ">
                     <Link
                       href="/settings"
-                      className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                      className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                     >
                       <Image
                         src={settingsPng}
@@ -276,7 +255,7 @@ export default function Page() {
                       <>
                         <Link
                           href="/admin"
-                          className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                          className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                         >
                           <Image
                             src={lockPng}
@@ -288,10 +267,13 @@ export default function Page() {
                         </Link>
                       </>
                     )}
+                    <div className="mb-2 ml-12 mt-1">
+                      <ThemeToggle />
+                    </div>{" "}
                   </div>
                   <button
                     onClick={() => signOut({ callbackUrl: "/" })}
-                    className="flex w-full items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                    className="flex w-full items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                   >
                     <Image src={exitPng} alt="exit" width={16} height={16} />
                     <p className=" text-[16px]">Log out</p>
@@ -303,7 +285,9 @@ export default function Page() {
           {!user && session.status !== "loading" && (
             <div className="hidden items-center justify-center gap-4 ss:flex">
               <ThemeToggle />
-              <SignInButton />
+              <div className="h-max-[5px]">
+                <SignInButton />
+              </div>
             </div>
           )}
 
@@ -325,7 +309,9 @@ export default function Page() {
       <FindTalentBlock status={findTalentBlockActive} />
       <FindJobBlock status={findJobBlockActive} />
       {hamburgerMenuActive ? (
-        <div className={`shadowAllSides fixed top-0 w-[100vw] bg-white p-2 `}>
+        <div
+          className={`shadowAllSides whiteBg fixed top-[69px] w-[100vw] p-2 `}
+        >
           <div className="flex items-center  gap-6">
             <Image
               src={user?.image || avatarPlaceholder}
@@ -345,7 +331,7 @@ export default function Page() {
             <div className=" w-full items-center justify-center">
               <Link
                 href="/settings"
-                className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
               >
                 <Image
                   src={settingsPng}
@@ -360,7 +346,7 @@ export default function Page() {
               <div className="w-full items-center justify-center">
                 <Link
                   href="/admin"
-                  className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                  className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                 >
                   <Image src={lockPng} alt="lock" width={16} height={16} />
                   <p className=" text-[16px]">Admin</p>
@@ -371,8 +357,8 @@ export default function Page() {
               <>
                 <div className="w-full items-center justify-center">
                   <Link
-                    href="/settings"
-                    className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                    href="/talent/search"
+                    className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                   >
                     <Image
                       src={usersPng}
@@ -385,8 +371,8 @@ export default function Page() {
                 </div>
                 <div className="w-full items-center justify-center">
                   <Link
-                    href="/settings"
-                    className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                    href="/job/search"
+                    className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                   >
                     <Image
                       src={jobsPng}
@@ -400,26 +386,12 @@ export default function Page() {
               </>
             ) : (
               <>
-                {user.talent ? (
+                {user.isTalent ? (
                   <>
                     <div className="w-full items-center justify-center">
                       <Link
-                        href="/settings"
-                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
-                      >
-                        <Image
-                          src={jobsPng}
-                          alt="jobs icon"
-                          width={16}
-                          height={16}
-                        />
-                        <p className=" text-[16px]">Your jobs</p>
-                      </Link>
-                    </div>
-                    <div className="w-full items-center justify-center">
-                      <Link
-                        href="/settings"
-                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                        href="/job/search"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                       >
                         <Image
                           src={jobsPng3}
@@ -435,8 +407,8 @@ export default function Page() {
                   <>
                     <div className="w-full items-center justify-center">
                       <Link
-                        href="/settings"
-                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                        href="/job#myjobs"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                       >
                         <Image
                           src={jobsPng}
@@ -449,8 +421,8 @@ export default function Page() {
                     </div>
                     <div className="w-full items-center justify-center">
                       <Link
-                        href="/settings"
-                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                        href="/talent/search"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                       >
                         <Image
                           src={usersPng}
@@ -464,7 +436,7 @@ export default function Page() {
                     <div className="w-full items-center justify-center">
                       <Link
                         href="/settings"
-                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light"
+                        className="flex items-center justify-start gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                       >
                         <Image
                           src={penPng}
@@ -479,13 +451,16 @@ export default function Page() {
                 )}
               </>
             )}
+            <div className="mb-2 ml-12 mt-1">
+              <ThemeToggle />
+            </div>
           </div>
           <div className="flex w-full items-center justify-center">
             {user ? (
               <div className="flex w-full items-center justify-center">
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="mb-2 flex gap-6 rounded-lg p-2 hover:bg-light"
+                  className="mb-2 flex gap-6 rounded-lg p-2 hover:bg-light hover:text-black"
                 >
                   <Image src={exitPng} alt="exit" width={16} height={16} />
                   <p className=" text-[16px]">Log out</p>

@@ -24,7 +24,7 @@ export default async function Page() {
     redirect("/api/auth/signin?callbackUrl=/talent");
   }
 
-  if (user.talent) {
+  if (user.isTalent) {
     redirect("/talent");
   }
 
@@ -51,7 +51,7 @@ export default async function Page() {
           <Image src={BigBen} width={128} height={128} alt="clock" />
         </div>
       </div>
-      <section className="my-16">
+      <section className="my-16" id="myjobs">
         <div className="flex items-center justify-between">
           <h1 className="customFont mb-8 text-[24px] leading-[36px] xs:text-[28px] xs:leading-[54px] md:text-[34px]">
             Your jobs

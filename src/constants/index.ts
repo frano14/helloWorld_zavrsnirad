@@ -94,7 +94,7 @@ export const popularTags: PopularTag[] = [
     jobs: 488,
   },
   {
-    title: "Database System",
+    title: "Database Administrator",
     talentsRating: 4.87,
     jobsRating: 4.88,
     talents: 129,

@@ -51,7 +51,9 @@ export default async function JobResults({
         </Link>
       ))}
       {jobs.length === 0 && (
-        <p className="m-auto text-center">No jobs found.</p>
+        <p className="m-auto text-center">
+          No jobs found for your search, please try something else.
+        </p>
       )}
     </div>
   );

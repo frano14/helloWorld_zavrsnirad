@@ -13,7 +13,9 @@ export default function AdminSidebar({ job }: AdminSidebarProps) {
   return (
     <aside className="flex w-[200px] flex-none flex-row items-center gap-2 text-black md:flex-col md:items-stretch">
       {job.approved ? (
-        <span className=" bg-green text-center font-semibold">Approved</span>
+        <span className=" bg-green text-center font-semibold text-white">
+          Approved
+        </span>
       ) : (
         <ApproveSubmissionButton jobId={job.id} />
       )}

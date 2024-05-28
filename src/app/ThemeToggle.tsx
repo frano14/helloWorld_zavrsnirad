@@ -5,12 +5,12 @@ import { BsSunFill } from "react-icons/bs";
 import { use, useEffect, useState } from "react";
 
 const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
     if (theme === "dark") {
-      setDarkMode(true);
+      setDarkMode(false);
     }
   }, []);
 
@@ -30,7 +30,7 @@ const ThemeToggle = () => {
     >
       <FaMoon className="text-white" size={18} />
       <div
-        className="dark:bg-medium absolute max-h-8 w-6 transform rounded-full bg-white shadow-md transition-transform duration-300"
+        className="absolute max-h-8 w-6 transform rounded-full bg-white shadow-md transition-transform duration-300 dark:bg-medium"
         style={darkMode ? { left: "2px" } : { right: "2px" }}
       ></div>
       <BsSunFill className="ml-auto text-yellow-400" size={18} />

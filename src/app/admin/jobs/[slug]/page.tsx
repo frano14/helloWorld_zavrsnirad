@@ -15,7 +15,7 @@ export default async function Page({ params: { slug } }: PageProps) {
   if (!job) notFound();
 
   return (
-    <main className="m-auto my-10 flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
+    <main className="m-auto mt-[128px] w-full px-0 xs:px-6 sc:max-w-[1200px] sc:px-0">
       <JobPage job={job} />
       <AdminSidebar job={job} />
     </main>

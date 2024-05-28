@@ -55,11 +55,12 @@ export default async function Page({
   if (!user) {
     redirect("/api/auth/signin?callbackUrl=/talent");
   }
-  console.log(user);
-  console.log(filterValue);
+
   return (
     <div className="m-auto mt-[128px] w-full px-0 xs:px-6 sc:max-w-[1200px] sc:px-0">
-      <h1 className=" m-auto">{getTitle(filterValue)}</h1>
+      <h1 className=" m-auto mb-6 text-center text-[24px] font-semibold">
+        {getTitle(filterValue)}
+      </h1>
       <div className="relative flex flex-col gap-4 md:flex-row">
         <JobFilterSidebar defaultValues={filterValue} />
         <JobResults filterValues={filterValue} />

@@ -5,8 +5,6 @@ import prisma from "@/lib/prisma";
 import { UpdateProfileValues, updateProfileSchema } from "@/lib/validation";
 import { revalidatePath } from "next/cache";
 
-// To learn more about server actions, watch my YT tutorial: https://www.youtube.com/watch?v=XD5FpbVpWzk
-
 export async function updateProfile(values: UpdateProfileValues) {
   const session = await auth();
   const userId = session?.user?.id;
@@ -15,8 +13,15 @@ export async function updateProfile(values: UpdateProfileValues) {
     throw Error("Unauthorized");
   }
 
-  const { name, username, worklocation, country, worktime, experience } =
-    updateProfileSchema.parse(values);
+  const {
+    name,
+    username,
+    worklocation,
+    country,
+    worktime,
+    experience,
+    isTalent,
+  } = updateProfileSchema.parse(values);
 
   await prisma.user.update({
     where: {
@@ -29,6 +34,7 @@ export async function updateProfile(values: UpdateProfileValues) {
       country,
       worktime,
       experience,
+      isTalent,
     },
   });
 

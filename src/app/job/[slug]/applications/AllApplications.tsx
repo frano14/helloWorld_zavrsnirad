@@ -49,7 +49,7 @@ const AllApplications: React.FC<AllApplicationsProps> = ({
         </div>
       </h1>
       {showApplications && (
-        <div>
+        <div className="blackTxt">
           <div className="mb-6">
             <p className="mb-2 text-[20px] text-lime-600">
               Approved applications
